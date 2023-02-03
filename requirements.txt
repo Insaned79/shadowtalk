@@ -1,0 +1,4 @@
+bjoern~=3.2.2
+Flask~=2.0.3
+Jinja2~=3.0.3
+passlib~=1.7.4

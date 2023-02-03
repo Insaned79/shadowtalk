@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Leave Message{% endblock %}
+{% block content %}
+   <h1>Leave Message for User {{user_id}}</h1>
+    <form action="{{ url_for('leave_message4user', user_id=user_id) }}" method="post">
+      <textarea name="message" style="width: 50%;" rows="10" cols="50" id="message"></textarea><br>
+      <input type="submit" value="Submit">
+    </form>
+{% endblock %}

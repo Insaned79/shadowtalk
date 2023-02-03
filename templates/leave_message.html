@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Leave a message{% endblock %}
+
+{% block content %}
+  <h1>Leave a message</h1>
+  <p>Please be aware that the messages on the server are stored in unencrypted form. It is recommended to use encryption on the user's side when transmitting sensitive information.</p>
+  <form action="{{ url_for('leave_message') }}" method="post">
+    <label for="user_id">User ID:</label>
+    <input type="text" name="user_id" style="width: 50%;" id="user_id">
+    <br><br>
+    <label for="message">Message:</label>
+    <textarea name="message" style="width: 50%;" rows="10" cols="50" id="message"></textarea>
+    <br><br>
+    <input type="submit" value="Submit">
+  </form>
+{% endblock %}

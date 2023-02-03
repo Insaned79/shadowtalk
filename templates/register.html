@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+    <h1>Registration</h1>
+    <form action="/register" method="post">
+      <label for="name">Username:</label>
+      <input type="text" id="name" name="username">
+      <br><br>
+      <label for="Password">Password:</label>
+      <input type="password" id="password" name="password">
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
+    {% if user_id %}
+      <p>Your ID: {{ user_id }}</p>
+    {% endif %}
+{% endblock %}

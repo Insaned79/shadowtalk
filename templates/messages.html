@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Messages{% endblock %}
+
+{% block content %}
+    <h1>Messages for user {{user_id}}</h1>
+
+    <table>
+      <tr>
+        <th style="border: 1px solid black;">Message</th>
+        <th style="border: 1px solid black;">Timestamp</th>
+        <th style="border: 1px solid black;">Action</th>
+      </tr>
+      {% for message in messages %}
+      <tr style="border: 1px solid black;">
+        <td style="border: 1px solid black;">{{message.message|escape|linebreaksbr}}</td>
+        <td style="border: 1px solid black;">{{message.timestamp}}</td>
+        <td style="border: 1px solid black;"><a href="{{url_for('delete_message', message_id=message.id)}}">Delete</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+    <a href="{{ url_for('leave_message4user', user_id=user_id) }}">Link to share</a>
+{% endblock %}

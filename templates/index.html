@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+  <h1>Welcome to the ShadowTalk Communications</h1>
+  <ul>
+    {% if session.user_id %}
+      <li>User ID: {{ session.user_id }}</li>
+      <li><a href="{{ url_for('change_password') }}">Change password</a></li>
+      <li><a href="{{ url_for('logout') }}">Logout</a></li>
+    {% else %}
+      <li><a href="{{ url_for('register') }}">Register</a></li>
+    {% endif %}
+    <li><a href="{{ url_for('leave_message') }}">Leave a message</a></li>
+    <li><a href="{{ url_for('messages') }}">Read messages</a></li>
+  </ul>
+{% endblock %}
